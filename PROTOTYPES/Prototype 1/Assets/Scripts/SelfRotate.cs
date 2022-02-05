@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SelfRotate : MonoBehaviour
 {
+    [SerializeField]private Vector3 _rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +12,10 @@ public class SelfRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.Rotate(_rotation * Time.deltaTime);
     }
 }
+/*
+ https://youtu.be/xk0YFoqXPtI */
